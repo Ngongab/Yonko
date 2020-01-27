@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+
+  	
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Welcome to Zed Resturants</h1>
+			<p>View our hand-picked resturants from all over Zambia</p>
+			<p>
+				<a class="btn btn-primary btn-large" href="/resturants/new">Add new Resturant</a>
+			</p>
+		</div>
+	</header>
+
+		<div class="row text-center">
+			<% resturants.forEach(function(resturant){ %>
+				<div class="col-md-3 col-sm-6">
+					<div class="card">
+						<img class="card-img-top" src= "<%= resturant.image %>" alt="card img cap">
+						<div class="card-body">
+							<h4 class="card-text"><%= resturant.name %></h4>
+							<a href="/resturants/<%= resturant._id %>" class="btn btn-primary">More Info</a>
+						</div>
+					</div>
+				</div>      
+
+		<% }); %>
+		</div>
+	</div>
+	
+<% include ../partials/footer %>
